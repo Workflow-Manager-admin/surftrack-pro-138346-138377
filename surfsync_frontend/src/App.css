@@ -21,9 +21,20 @@
   --button-text: #ffffff;
 }
 
+/* SurfSync custom theme variables */
+:root {
+  --ss-accent: #20B2AA;
+  --ss-primary: #5DADEC;
+  --ss-secondary: #F4E2D8;
+  --ss-bg-gradient: linear-gradient(120deg,#5DADEC 30%, #20B2AA 100%);
+  --ss-light: #ffffff;
+  --ss-border: #aedfe4;
+  --ss-shadow: 0 1.5px 8px #5dadec28;
+}
+
 .App {
   text-align: center;
-  background-color: var(--bg-primary);
+  background: var(--ss-bg-gradient), var(--bg-primary); /* ocean gradient */
   color: var(--text-primary);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -57,6 +68,81 @@
   color: var(--text-secondary);
   transition: color 0.3s ease;
 }
+
+/* Custom SurfSync Styles */
+.session-card {
+  transition: box-shadow 0.18s, transform 0.15s;
+}
+.session-card:hover {
+  box-shadow: 0 3px 16px 0 #20b2aa36;
+  transform: scale(1.02);
+}
+
+.form-row {
+  margin: 11px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.form-row label {
+  font-weight: 600;
+  color: var(--ss-accent);
+  margin-bottom: 4px;
+}
+.form-row input[type="date"], .form-row input[type="number"], .form-row input, .form-row select {
+  border-radius: 7px;
+  border: 1.3px solid var(--ss-border);
+  font-size: 1rem;
+  padding: 7px 10px;
+  margin-right: 6px;
+  outline: none;
+  background: #f7fcfc;
+}
+.form-row textarea {
+  border-radius: 7px;
+  border: 1.3px solid var(--ss-border);
+  font-size: 1rem;
+  padding: 6px 11px;
+  min-width: 80%;
+  min-height: 48px;
+  background: #f7fcfc;
+}
+.form-row select {
+  min-width: 110px;
+}
+
+.mood-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+}
+.mood-row > div {
+  display: flex;
+  gap: 9px;
+}
+
+.surf-app-bg {
+  background: linear-gradient(120deg,#5DADEC 21%, #20B2AA 100%);
+}
+
+@media (max-width: 1000px) {
+  .App-header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  main {
+    flex-direction: column !important;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .App-header nav {
+    flex-direction: column;
+    padding: 0.4rem 1rem;
+  }
+}
+
 
 .theme-toggle {
   position: absolute;

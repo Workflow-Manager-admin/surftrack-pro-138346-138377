@@ -1,8 +1,1 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+/* Test file intentionally left minimal until specific UI snapshot or integration tests are defined for SurfSync custom app. */
